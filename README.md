@@ -16,8 +16,7 @@ This is a **NothingOS-inspired desktop build** for **Manjaro Linux (GNOME editio
 - 🎨 **GTK Theme** — Matches the Shell theme for a unified look  
 - 🖥 **Alacritty Config** — Transparency, blur, and font matching NothingOS style  
 - 🧱 **Eww Widgets** — Interactive status bar with time, date, weather, system stats, and music  
-- 📈 **Conky Setup** — Optional low-resource alternative to Eww  
-- 📦 **Fonts & Icons** — Sleek, minimal set that complements the overall aesthetic  
+- 📈 **Conky Setup** — Optional low-resource alternative to Eww    
 - 🖼 **Wallpapers** — Custom and curated Nothing-style backgrounds  
 
 ---
@@ -29,8 +28,8 @@ This is a **NothingOS-inspired desktop build** for **Manjaro Linux (GNOME editio
 ### 1. Clone the Repo
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/nothingos-gnome
-cd nothingos-gnome
+git clone https://github.com/HyenaDesign/nothingos-gnome-manjaro
+cd nothingos-gnome-manjaro
 ```
 ### 2. Copy the configs
 
