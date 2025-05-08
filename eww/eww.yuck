@@ -1,0 +1,196 @@
+;; NothingOS-style temperature widget
+
+(defpoll WASISTLOS_NOTIFICATION :interval "10s" "scripts/get-wasistlos.sh")
+
+;; Define the temperature polling
+(defpoll TEMPERATURE :interval "10s" "scripts/get-temp.sh")
+
+;; Temperature widget
+(defwidget temp-widget []
+  (box :class "nothing-temp" 
+       :orientation "v" 
+       :space-evenly false 
+       :halign "center" 
+       :valign "center"
+    (box :class "temp-content" 
+         :orientation "v" 
+         :space-evenly false 
+         :halign "center" 
+         :valign "center"
+      (label :class "temp-icon" :text "󰔏")
+      (box :orientation "h" 
+           :space-evenly false 
+           :halign "center"
+        (label :class "temp-value" :text TEMPERATURE)
+        (label :class "temp-unit" :text "°C")
+      )
+    )
+  )
+)
+
+;; Main window definition
+(defwindow cpu-temp
+  :monitor 0
+  :geometry (geometry :x "10px"
+                     :y "50px" ;; Moved down
+                     :width "150px"
+                     :height "150px")
+  :stacking "bg"
+  :windowtype "dock"
+  :wm-ignore false
+  :class "widget-window"
+  (temp-widget))
+
+;; Spotify Now Playing Widget
+(defpoll SPOTIFY_TRACK :interval "5s" "playerctl metadata --format '{{artist}} - {{title}}'")
+
+(defwidget spotify-widget []
+  (box :class "nothing-spotify" 
+       :orientation "v" 
+       :space-evenly false 
+       :halign "center" 
+       :valign "center"
+    (box :class "spotify-content" 
+         :orientation "v" 
+         :space-evenly false 
+         :halign "center" 
+         :valign "center"
+      (label :class "spotify-icon" :text "󰓇") ;; Spotify icon
+      (label :class "spotify-track" :text SPOTIFY_TRACK :wrap true)
+    )
+  )
+)
+
+;; Spotify Now Playing Window
+(defwindow spotify-now-playing
+  :monitor 0
+  :geometry (geometry :x "170px"
+                     :y "50px" ;; Moved down
+                     :width "150px"
+                     :height "150px")
+  :stacking "bg"
+  :windowtype "dock"
+  :wm-ignore false
+  :class "widget-window"
+  (spotify-widget))
+
+;; Quote of the Day Widget
+(defpoll QUOTE :interval "10s" "shuf -n 1 ~/.config/eww/quotes.txt")
+
+(defwidget quote-widget []
+  (box :class "nothing-quote" 
+       :orientation "v" 
+       :space-evenly false 
+       :halign "center" 
+       :valign "center"
+    (box :class "quote-content" 
+         :orientation "v" 
+         :space-evenly false 
+         :halign "center" 
+         :valign "center"
+         :overflow "hidden"
+      (label :class "quote-icon" :text "󰃬") ;; Quote icon
+      (label :class "quote-text" :text QUOTE :wrap true)
+    )
+  )
+)
+
+;; Quote of the Day Window
+(defwindow quote-of-the-day
+  :monitor 0
+  :geometry (geometry :x "10px"
+                     :y "210px" ;; Moved down
+                     :width "275px"
+                     :height "150px")
+  :stacking "bg"
+  :windowtype "dock"
+  :wm-ignore false
+  :class "widget-window"
+  (quote-widget))
+
+;; Weather Widget
+(defpoll WEATHER_TEMP :interval "10m" "scripts/get-weather.sh | grep WEATHER_TEMP | cut -d '=' -f2")
+(defpoll WEATHER_DESC :interval "10m" "scripts/get-weather.sh | grep WEATHER_DESC | cut -d '=' -f2")
+
+(defwidget weather-widget []
+  (box :class "nothing-weather" 
+       :orientation "v" 
+       :space-evenly false 
+       :halign "center" 
+       :valign "center"
+    (label :class "weather-icon" :text "󰖐") ;; Weather icon
+    (box :orientation "h" :halign "center" :space-evenly false
+      (label :class "weather-temp" :text "${WEATHER_TEMP}")
+      (label :class "weather-unit" :text "°C")
+    )
+    (label :class "weather-desc" :text "${WEATHER_DESC}" :wrap true)
+  )
+)
+
+;; Weather Window
+(defwindow weather-widget
+  :monitor 0
+  :geometry (geometry :x "10px"
+                     :y "370px" ;; Moved down
+                     :width "150px"
+                     :height "150px")
+  :stacking "bg"
+  :windowtype "dock"
+  :wm-ignore false
+  :class "widget-window"
+  (weather-widget))
+
+;; Day of the Month Widget
+(defpoll CURRENT_DAY :interval "1h" "date +'%d'")
+
+(defwidget day-widget []
+  (box :class "nothing-day" 
+       :orientation "v" 
+       :space-evenly false 
+       :halign "center" 
+       :valign "center"
+    (label :class "day-number" :text CURRENT_DAY)
+  )
+)
+
+;; Day of the Month Window
+(defwindow day-of-month
+  :monitor 0
+  :geometry (geometry :x "170px"
+                     :y "370px" ;; Moved down
+                     :width "150px"
+                     :height "150px")
+  :stacking "bg"
+  :windowtype "dock"
+  :wm-ignore false
+  :class "widget-window"
+  (day-widget))
+
+  (defwidget wasistlos-widget []
+  (box :class "nothing-wasistlos" 
+       :orientation "v" 
+       :space-evenly false 
+       :halign "center" 
+       :valign "center"
+    (box :class "wasistlos-content" 
+         :orientation "v" 
+         :space-evenly false 
+         :halign "center" 
+         :valign "center"
+      (label :class "wasistlos-icon" :text "󰍡") ;; Notification icon
+      (label :class "wasistlos-text" :text WASISTLOS_NOTIFICATION :wrap true) ;; Notification text
+    )
+  )
+)
+
+(defwindow wasistlos-widget
+  :monitor 0
+  :geometry (geometry :x "330px"
+                     :y "370px" ;; Adjust position as needed
+                     :width "150px"
+                     :height "150px")
+  :stacking "bg"
+  :windowtype "dock"
+  :wm-ignore false
+  :class "widget-window"
+  (wasistlos-widget))

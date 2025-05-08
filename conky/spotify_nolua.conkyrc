@@ -1,0 +1,51 @@
+conky.config = {
+    alignment = 'top_left',
+    background = false,
+    border_width = 0,
+    cpu_avg_samples = 2,
+    default_color = 'white',
+    default_outline_color = 'white',
+    default_shade_color = 'white',
+    double_buffer = true,
+    draw_borders = false,
+    draw_graph_borders = false,
+    draw_outline = false,
+    draw_shades = false,
+    extra_newline = false,
+    font = 'JetBrains Mono:size=9',
+    gap_x = 20,
+    gap_y = 20,
+    minimum_height = 200,
+    minimum_width = 250,
+    maximum_width = 250,
+    net_avg_samples = 2,
+    no_buffers = true,
+    out_to_console = false,
+    out_to_stderr = false,
+    own_window = true,
+    own_window_class = 'Conky',
+    own_window_type = 'desktop',
+    own_window_transparent = true,
+    own_window_hints = 'undecorated,below,sticky,skip_taskbar,skip_pager',
+    own_window_argb_visual = true,
+    own_window_argb_value = 0,
+    update_interval = 1.0,
+    uppercase = false,
+    use_spacer = 'none',
+    use_xft = true,
+};
+
+conky.text = [[
+${voffset 5}${alignc}${font JetBrains Mono:size=10:bold}SPOTIFY${font}
+${voffset 5}${alignc}${font JetBrains Mono:size=8}• NOW PLAYING •${font}
+
+${voffset 10}${alignc}${font JetBrains Mono:size=9}${exec ~/.config/conky/spotify_script.sh title}${font}
+${voffset 2}${alignc}${font JetBrains Mono:size=8}by ${exec ~/.config/conky/spotify_script.sh artist}${font}
+${voffset 2}${alignc}${font JetBrains Mono:size=7}from ${exec ~/.config/conky/spotify_script.sh album}${font}
+
+${voffset 10}${alignc}${if_match "${exec ~/.config/conky/spotify_script.sh status}"=="Playing"}● PLAYING${else}${if_match "${exec ~/.config/conky/spotify_script.sh status}"=="Paused"}❙❙ PAUSED${else}■ STOPPED${endif}${endif}
+
+${voffset 5}${alignc}${exec ~/.config/conky/spotify_progress.sh}
+
+${voffset 5}${alignc}${font JetBrains Mono:size=8}${exec ~/.config/conky/spotify_script.sh position} / ${exec ~/.config/conky/spotify_script.sh duration}${font}
+]];

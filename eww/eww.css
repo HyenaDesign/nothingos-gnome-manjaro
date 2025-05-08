@@ -1,0 +1,191 @@
+/* Global reset */
+
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Inter", "SF Pro Display", "Roboto", sans-serif;
+  font-family: "Doto", sans-serif;
+  font-weight: 700;;
+  background-color: transparent;
+}
+
+/* Uniform size and shape for all widgets except the quote widget */
+.nothing-temp,
+.nothing-spotify,
+.nothing-weather,
+.nothing-day {
+  border-radius: 24px; /* Rounded corners */
+  padding: 16px;       /* Consistent padding */
+  min-width: 120px;    /* Uniform width */
+  min-height: 120px;   /* Uniform height */
+}
+
+/* Temperature widget (red circle) */
+.nothing-temp {
+  background-color: red;
+  border: none;
+  color: #ffffff;
+}
+
+.temp-content {
+  margin: 8px;
+}
+
+.temp-icon {
+  font-size: 24px;
+  margin-bottom: 12px;
+  font-weight: 300;
+  opacity: 0.9;
+}
+
+.temp-value {
+  font-size: 36px;
+  font-weight: 700;
+}
+
+.temp-unit {
+  font-size: 24px;
+  font-weight: 700;
+}
+
+/* Window styling */
+.widget-window {
+  background-color: transparent;
+  border: none;
+  box-shadow: none;
+}
+
+/* Debug box */
+.debug-box {
+  background-color: #333333;
+  border-radius: 24px;
+  padding: 10px;
+  color: #ffffff;
+}
+
+/* Spotify widget (green circle) */
+.nothing-spotify {
+  background-color: #363636; /* Spotify green */
+  color: #ffffff;
+}
+
+.spotify-content {
+  margin: 8px;
+}
+
+.spotify-icon {
+  color:#1DB954;
+  font-size: 24px;
+  margin-bottom: 12px;
+  font-weight: 300;
+  opacity: 0.9;
+}
+
+.spotify-track {
+  font-size: 12px;
+  font-weight: 500;
+  color: white;
+}
+
+/* Quote widget (purple rectangle) */
+.nothing-quote {
+  background-color: whitesmoke; /* Purple color for the quote widget */
+  border-radius: 24px; /* Keep rounded corners */
+  padding: 16px;
+  min-width: 275px; /* Match the combined width of the two widgets */
+  min-height: 120px; /* Adjust height as needed */
+}
+
+.quote-content {
+  margin: 8px;
+}
+
+.quote-icon {
+  font-size: 24px;
+  color: red;
+  margin-bottom: 12px;
+  font-weight: 300;
+  opacity: 0.9;
+}
+
+.quote-text {
+  font-size: 14px;
+  color: black;
+  font-weight: 700;
+}
+
+/* Weather widget (blue circle) */
+.nothing-weather {
+  background-color: whitesmoke; /* Blue color for the weather widget */
+  color: #ffffff;
+  margin-left: -1px;
+}
+
+.weather-icon {
+  font-size: 40px;
+  margin-bottom: 12px;
+  font-weight: 300;
+  opacity: 0.9;
+  margin-right: 11px;
+  color: red; /* Change icon color to red */
+}
+
+.weather-temp {
+  margin-top: -15px;
+  font-size: 36px;
+  font-weight: 700;
+  color: black;
+}
+
+.weather-unit {
+  font-size: 26px;
+  font-weight: 500;
+  color: red;
+  margin-left: 4px;
+  margin-top: -26px;
+}
+
+.weather-desc {
+  font-size: 14px;
+  font-weight: 500;
+  color: black;
+}
+
+.nothing-day {
+  background-color: rgba(255, 255, 255, 0.1); /* Semi-transparent white */
+  border: 1px solid rgba(255, 255, 255, 0.2); /* Subtle border */
+  color: #ffffff;
+  margin-left: 0px
+}
+
+.day-number {
+  font-size: 60px;
+  margin-top: 20px;
+  margin-right: 5px;
+  font-weight: 700;
+  font-family: "Abril Fatface", sans-serif;
+}
+
+.nothing-wasistlos {
+  background-color: rgba(255, 255, 255, 0.1); /* Semi-transparent white */
+  border: 1px solid rgba(255, 255, 255, 0.2); /* Subtle border */
+  color: #ffffff;
+  padding: 16px;
+  border-radius: 24px;
+  min-width: 120px;
+  min-height: 120px;
+}
+
+.wasistlos-icon {
+  font-size: 40px;
+  margin-bottom: 12px;
+  font-weight: 300;
+  opacity: 0.9;
+}
+
+.wasistlos-text {
+  font-size: 14px;
+  font-weight: 500;
+  color: #ffffff;
+}

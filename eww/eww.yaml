@@ -1,0 +1,9 @@
+scripts:
+  # Get the current media title and artist using playerctl
+  get-media-info: "playerctl metadata --format '{{ title }} – {{ artist }}' || echo '⏹️ Nothing playing'"
+
+  # Get current date and time
+  get-date-time: "date '+📅 %a, %d %b  ·  %I:%M %p'"
+
+  # Get battery status using acpi
+  get-battery-status: "acpi | cut -d: -f2- | sed 's/^/🔋/'"

@@ -1,0 +1,80 @@
+[colors.bright]
+black = "0x626262"
+blue = "0x87d7ff"
+cyan = "0xafeeee"
+green = "0xffffff"
+magenta = "0xffafff"
+red = "0xff8787"
+white = "0xffffff"
+yellow = "0xffffaf"
+
+[colors.cursor]
+cursor = "0xffffff"
+text = "0x0f0f0f"
+
+[colors.normal]
+black = "0x1a1a1a"
+blue = "0x5fafff"
+cyan = "0x87ffff"
+green = "0xff5f5f"
+magenta = "0xff87ff"
+red = "0xff5f5f"
+white = "0xd0d0d0"
+yellow = "0xffff87"
+
+[colors.primary]
+background = "0x363636"
+foreground = "0xfafafa"
+
+[colors.selection]
+background = "0xffffff"
+text = "0x0f0f0f"
+
+[cursor]
+blink_interval = 500
+
+[cursor.style]
+blinking = "On"
+shape = "Beam"
+
+[font]
+size = 12.0
+
+[font.glyph_offset]
+x = 0
+y = 0
+
+[font.normal]
+family = "Fira Code"
+style = "Regular"
+
+[font.offset]
+x = 0
+y = 1
+
+[general]
+live_config_reload = true
+
+[scrolling]
+history = 10000
+multiplier = 3
+
+[terminal.shell]
+program = "/bin/bash"
+args = ["-c", "neofetch; exec bash"]
+
+[window]
+blur = true
+decorations = "none"
+dynamic_title = true
+opacity = 0.85
+startup_mode = "Windowed"
+
+[window.padding]
+x = 20
+y = 20
+
+[terminal]
+
+
+
