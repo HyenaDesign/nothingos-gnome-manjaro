@@ -1,13 +1,32 @@
-*.tar
-*.tar.*
-*.jar
-*.exe
-*.msi
-*.zip
-*.tgz
-*.log
-*.log.*
-*.sig
+# Backup files
+*~
 
-pkg/
-src/
+# Logs and caches
+*.log
+.cache/
+*.bak
+*.tmp
+
+# System files
+.DS_Store
+Thumbs.db
+
+# Secrets and sensitive files
+.env
+config.env
+secrets.txt
+
+# VS Code or JetBrains project files (if any)
+.vscode/
+.idea/
+
+# GNOME/misc system-specific configs
+.local/share/
+.gnome/
+.gconf/
+
+# Compiled scripts or temp output
+*.pyc
+*.o
+*.out
+*.swp
