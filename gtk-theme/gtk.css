@@ -1,0 +1,245 @@
+/* Nothing-inspired GTK Theme */
+
+/* Main colors */
+@define-color bg_color #000000;
+@define-color fg_color #ffffff;
+@define-color accent_color #45ffbc;
+@define-color accent_bg_color rgba(69, 255, 188, 0.15);
+@define-color warning_color #fffa65;
+@define-color error_color #ff4545;
+
+/* Window styling */
+window {
+  background-color: @bg_color;
+  color: @fg_color;
+}
+
+window.solid-csd {
+  border-radius: 12px;
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.1);
+}
+
+headerbar {
+  background-color: rgba(0, 0, 0, 0.9);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 8px;
+  min-height: 48px;
+}
+
+headerbar button {
+  border-radius: 20px;
+  padding: 6px 12px;
+  background-color: transparent;
+  color: @fg_color;
+}
+
+headerbar button:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+headerbar button:active {
+  background-color: @accent_bg_color;
+  color: @accent_color;
+}
+
+/* Buttons */
+button {
+  border-radius: 20px;
+  padding: 8px 16px;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: @fg_color;
+  border: none;
+}
+
+button:hover {
+  background-color: rgba(255, 255, 255, 0.15);
+}
+
+button:active {
+  background-color: @accent_bg_color;
+  color: @accent_color;
+}
+
+button.suggested-action {
+  background-color: @accent_color;
+  color: black;
+}
+
+button.suggested-action:hover {
+  background-color: mix(@accent_color, white, 0.8);
+}
+
+button.destructive-action {
+  background-color: @error_color;
+  color: white;
+}
+
+button.destructive-action:hover {
+  background-color: mix(@error_color, white, 0.8);
+}
+
+/* Entry fields */
+entry {
+  border-radius: 20px;
+  padding: 8px 16px;
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: @fg_color;
+}
+
+entry:focus {
+  border-color: @accent_color;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+/* Switches */
+switch {
+  border-radius: 16px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border: none;
+  min-width: 48px;
+  min-height: 24px;
+}
+
+switch:checked {
+  background-color: @accent_color;
+}
+
+switch slider {
+  border-radius: 50%;
+  min-width: 18px;
+  min-height: 18px;
+  background-color: white;
+  margin: 3px;
+}
+
+switch:checked slider {
+  background-color: black;
+}
+
+/* Checkboxes and Radio buttons */
+check, radio {
+  border-radius: 4px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  background-color: transparent;
+  color: @fg_color;
+  min-width: 16px;
+  min-height: 16px;
+}
+
+radio {
+  border-radius: 50%;
+}
+
+check:checked, radio:checked {
+  background-color: @accent_color;
+  border-color: @accent_color;
+  color: black;
+}
+
+/* Lists and Sidebars */
+list, sidebar {
+  background-color: rgba(0, 0, 0, 0.7);
+  color: @fg_color;
+}
+
+list row, sidebar row {
+  padding: 8px;
+  border-radius: 8px;
+  margin: 2px 4px;
+}
+
+list row:hover, sidebar row:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+list row:selected, sidebar row:selected {
+  background-color: @accent_bg_color;
+  color: @accent_color;
+}
+
+/* Scrollbars */
+scrollbar {
+  background-color: transparent;
+}
+
+scrollbar slider {
+  min-width: 6px;
+  min-height: 6px;
+  border-radius: 3px;
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+scrollbar slider:hover {
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+scrollbar slider:active {
+  background-color: @accent_color;
+}
+
+/* Progressbars */
+progressbar trough {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+  min-height: 6px;
+}
+
+progressbar progress {
+  background-color: @accent_color;
+  border-radius: 4px;
+}
+
+/* Scales (sliders) */
+scale trough {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+  min-height: 6px;
+}
+
+scale highlight {
+  background-color: @accent_color;
+  border-radius: 4px;
+}
+
+scale slider {
+  border-radius: 50%;
+  min-width: 16px;
+  min-height: 16px;
+  background-color: white;
+}
+
+/* Notebooks (tabs) */
+notebook > header {
+  background-color: rgba(0, 0, 0, 0.8);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+notebook > header > tabs > tab {
+  padding: 8px 16px;
+  color: rgba(255, 255, 255, 0.7);
+  border-radius: 8px 8px 0 0;
+  margin-right: 2px;
+}
+
+notebook > header > tabs > tab:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+notebook > header > tabs > tab:checked {
+  color: @accent_color;
+  border-bottom: 2px solid @accent_color;
+}
+
+/* Dot matrix pattern overlay for certain elements */
+headerbar,
+button,
+entry,
+switch,
+list row:selected,
+sidebar row:selected {
+  background-image: url("assets/dot-pattern.svg");
+  background-repeat: repeat;
+  background-size: 24px;
+  background-blend-mode: overlay;
+}
