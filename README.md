@@ -6,7 +6,7 @@ This is a **NothingOS-inspired desktop build** for **Manjaro Linux (GNOME editio
 
 ## 📷 Screenshots
 
-
+![Image](https://github.com/user-attachments/assets/e5b12125-3ab4-4e47-b541-66a3e3929132)
 
 ---
 
