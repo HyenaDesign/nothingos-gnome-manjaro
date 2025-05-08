@@ -20,6 +20,48 @@ This is a **NothingOS-inspired desktop build** for **Manjaro Linux (GNOME editio
 - 🖼 **Wallpapers** — Custom and curated Nothing-style backgrounds  
 
 ---
+## 🧰 Dependencies Installation
+
+This setup uses **Conky** (for system widgets) and **Eww** (ElKowars Wacky Widgets). Make sure both are installed before proceeding.
+
+### 📦 Install on Different Distros
+
+#### 🔹 Arch Linux / Manjaro
+```bash
+sudo pacman -S conky eww
+```
+#### 🔹 Debian / Ubuntu
+```bash
+sudo apt install conky-all
+sudo apt install libgtk-3-dev libglib2.0-dev libpango1.0-dev libgdk-pixbuf2.0-dev libjson-glib-dev rustc cargo git
+
+# Clone and build Eww
+git clone https://github.com/elkowar/eww.git
+cd eww
+cargo build --release
+sudo cp target/release/eww /usr/local/bin/
+```
+#### Fedora
+```bash
+sudo dnf install conky
+
+# Eww dependencies
+sudo dnf install gtk3-devel glib2-devel pango-devel gdk-pixbuf2-devel json-glib-devel rust cargo git
+
+# Clone and build Eww
+git clone https://github.com/elkowar/eww.git
+cd eww
+cargo build --release
+sudo cp target/release/eww /usr/local/bin/
+```
+#### NixOS
+```nix
+environment.systemPackages = with pkgs; [
+  conky
+  eww
+];
+```
+---
 
 ## 🛠 Installation
 
@@ -44,8 +86,16 @@ cp -r .icons/NothingOS-Icons ~/.icons/
 ```
 > Replace `~` with your actual home path if needed.
 ---
-
-### 3. Apply Themes
+### 3. Open widgets and Conky
+```bash
+conky -c ~/path/to/your/conky
+# for EWW widgets
+eww open name-of-widget
+# example eww open day-of-month
+# example conky -c ~/.conky/nothing-phone/nothing-phone-simple.conf
+```
+---
+### 4. Apply Themes
 
 Use **GNOME Tweaks** to apply:
 
