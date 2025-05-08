@@ -149,4 +149,4 @@ A: Absolutely! Feel free to fork, open issues, or submit pull requests.
 
 ## 📢 License
 
-This project is released under the [GLP3 License](LICENSE), unless otherwise noted.
+This project is released under the [GPL3 License](LICENSE), unless otherwise noted.
